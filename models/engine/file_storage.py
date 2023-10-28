@@ -79,5 +79,9 @@ class FileStorage:
             return None
 
     def count(self, cls=None):
+<<<<<<< HEAD
         '''class that is (optional)'''
+=======
+        '''count  number of objects in storage'''
+>>>>>>> d46e0ef89125189f793f6a46fb722530ed4705ae
         return (len(self.all(cls)))
