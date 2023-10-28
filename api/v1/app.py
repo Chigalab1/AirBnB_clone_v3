@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Createw Flask app; and register the blueprint app_views to Flask instance app.
+Createw Flask app
 '''
 
 from os import getenv
@@ -30,7 +30,7 @@ def teardown_engine(exception):
 @app.errorhandler(404)
 def not_found(error):
     '''
-    Return errmsg `Not Found`.
+    Return error message `Not Found`.
     '''
     response = {'error': 'Not found'}
     return jsonify(response), 404
