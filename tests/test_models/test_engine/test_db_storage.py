@@ -107,7 +107,7 @@ class TestDBStorage(unittest.TestCase):
     @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
                      "not testing db storage")
     def test_count(self):
-        """test method to count the number of objects in storage"""
+        """add new object to db"""
         startCount = models.storage.count()
         self.assertEqual(models.storage.count("Blah"), 0)
         newState = State(name="Montevideo")
