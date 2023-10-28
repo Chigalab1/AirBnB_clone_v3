@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Holberton Flask server
-"""
+'''Holberton Flask server
+'''
 
 
 from flask import Flask, jsonify
