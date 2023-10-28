@@ -1,4 +1,4 @@
-#!/usr/bin/python3xx
+#!/usr/bin/python3
 ''' status '''
 import models
 from models import storage
