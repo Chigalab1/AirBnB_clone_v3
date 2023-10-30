@@ -14,6 +14,7 @@ from models.amenity import Amenity
 from api.v1.views import app_views
 from models import storage
 
+
 # Route for retrieving all Place objects of a City
 @app_views.route('/cities/<city_id>/places', methods=['GET'],
                  strict_slashes=False)
@@ -31,6 +32,7 @@ def get_places_by_city(city_id):
     places = [place.to_dict() for place in city.places]
     return jsonify(places)
 
+
 # Route for retrieving a specific Place object by ID
 @app_views.route('/places/<place_id>', methods=['GET'],
                  strict_slashes=False)
@@ -46,6 +48,7 @@ def get_place(place_id):
     else:
         # Return 404 error if the Place object is not found
         abort(404)
+
 
 # Route for deleting a specific Place object by ID
 @app_views.route('/places/<place_id>', methods=['DELETE'])
@@ -64,6 +67,7 @@ def delete_place(place_id):
     else:
         # Return 404 error if the Place object is not found
         abort(404)
+
 
 # Route for creating a new Place object
 @app_views.route('/cities/<city_id>/places', methods=['POST'],
@@ -107,6 +111,7 @@ def create_place(city_id):
     # Return the newly created Place object in JSON format with 201 status
     return jsonify(place.to_dict()), 201
 
+
 # Route for updating an existing Place object by ID
 @app_views.route('/places/<place_id>', methods=['PUT'], strict_slashes=False)
 def update_place(place_id):
@@ -137,6 +142,7 @@ def update_place(place_id):
         # Return 404 error if the Place object is not found
         abort(404)
 
+
 # Error Handlers:
 @app_views.errorhandler(404)
 def not_found(error):
@@ -147,6 +153,7 @@ def not_found(error):
     response = {'error': 'Not found'}
     return jsonify(response), 404
 
+
 @app_views.errorhandler(400)
 def bad_request(error):
     '''
@@ -155,6 +162,7 @@ def bad_request(error):
     # Return a JSON response for 400 error
     response = {'error': 'Bad Request'}
     return jsonify(response), 400
+
 
 # New endpoint: POST /api/v1/places_search
 @app_views.route('/places_search', methods=['POST'], strict_slashes=False)
